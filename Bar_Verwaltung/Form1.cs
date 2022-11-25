@@ -6,5 +6,20 @@ namespace Bar_Verwaltung
         {
             InitializeComponent();
         }
+
+        private void btn_Storage_Click(object sender, EventArgs e)
+        {
+            page_Storage1.BringToFront();
+        }
+
+        private void btn_Finance_Click(object sender, EventArgs e)
+        {
+            page_Finance1.BringToFront();
+        }
+
+        private void btn_Settings_Click(object sender, EventArgs e)
+        {
+            page_Settings1.BringToFront();
+        }
     }
 }
