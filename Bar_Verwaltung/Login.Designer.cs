@@ -77,6 +77,7 @@
             this.btn_1.TabIndex = 4;
             this.btn_1.Text = "Login";
             this.btn_1.UseVisualStyleBackColor = true;
+            this.btn_1.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_2
             // 
@@ -86,6 +87,7 @@
             this.btn_2.TabIndex = 5;
             this.btn_2.Text = "New User";
             this.btn_2.UseVisualStyleBackColor = true;
+            this.btn_2.Click += new System.EventHandler(this.btn_2_Click);
             // 
             // lb_1
             // 
