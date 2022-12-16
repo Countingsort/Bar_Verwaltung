@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Bar_Verwaltung
 {
-    internal class SQLCommunicator
+    static internal class SQLCommunicator
     {
+        public static void lgn()
+        {
+
+        }
     }
 }

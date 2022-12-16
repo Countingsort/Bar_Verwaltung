@@ -19,13 +19,16 @@ namespace Bar_Verwaltung
 
         private void btn_1_Click(object sender, EventArgs e)
         {
-            string user = txtB_1.Text;
-            string password = txtB_2.Text;
+            if(txtB_1.Text is not null && txtB_2.Text is not null)
+            {
+                string user = txtB_1.Text;
+                string password = txtB_2.Text;
 
-            Form1 f2 = new Form1();
-            this.Hide();
-            f2.ShowDialog();
-            this.Show();
+                Form1 f2 = new Form1();
+                this.Hide();
+                f2.ShowDialog();
+                this.Show();
+            }
         }
 
         private void btn_2_Click(object sender, EventArgs e)
