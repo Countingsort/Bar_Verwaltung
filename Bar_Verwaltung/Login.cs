@@ -16,5 +16,27 @@ namespace Bar_Verwaltung
         {
             InitializeComponent();
         }
+
+        private void btn_1_Click(object sender, EventArgs e)
+        {
+            if(txtB_1.Text is not null && txtB_2.Text is not null)
+            {
+                string user = txtB_1.Text;
+                string password = txtB_2.Text;
+
+                Form1 f2 = new Form1();
+                this.Hide();
+                f2.ShowDialog();
+                this.Show();
+            }
+        }
+
+        private void btn_2_Click(object sender, EventArgs e)
+        {
+            Register f1 = new Register();
+            this.Hide();
+            f1.ShowDialog();
+            this.Show();
+        }
     }
 }
