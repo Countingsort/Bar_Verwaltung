@@ -63,7 +63,7 @@ namespace Bar_Verwaltung
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "Create Table TLogin(UserID int IDENTITY (1,1) PRIMARY KEY,Username nvarchar(50),Password nvarchar(128));";
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "Create Table TStock(ID int identity(1,1),Date date,number1 nvarchar(50),number2 nvarchar(50),Amount int,Message nvarchar(50));";
+                cmd.CommandText = "Create Table TStock(ID int identity(1,1),Boolean Drink,nvarchar(50) Item,int Quantaty, int Price,text Ingrediens;";//not finished
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
