@@ -17,7 +17,7 @@ namespace Bar_Verwaltung
             InitializeComponent();
         }
 
-        private void btn_1_Click(object sender, EventArgs e)
+        private void btn_1_Click(object sender, EventArgs e) //Markus why btn_1 name
         {
             if(txtB_1.Text is not null && txtB_2.Text is not null)
             {
