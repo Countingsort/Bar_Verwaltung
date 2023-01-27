@@ -77,7 +77,7 @@ namespace Bar_Verwaltung
         {
             string pw = string.Empty;
 
-            cmd.CommandText = string.Format("Select Password from TLogin where Username = {0};",user);
+            cmd.CommandText = string.Format("Select Password from TLogin where Username = '{0}';",user);
             con.Open();
             cmd.ExecuteNonQuery();
             SqlDataReader reader = cmd.ExecuteReader();
@@ -99,7 +99,7 @@ namespace Bar_Verwaltung
         public static void Register(string user, string pw)
         {
             string hpw = BCrypt.HashPassword(pw, BCrypt.GenerateSalt());//hasped password
-            cmd.CommandText = string.Format("Insert into TLogin(Username,Password) Values ({0},{1});", user, hpw);
+            cmd.CommandText = string.Format("Insert into TLogin(Username,Password) Values ('{0}','{1}');", user, hpw);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();

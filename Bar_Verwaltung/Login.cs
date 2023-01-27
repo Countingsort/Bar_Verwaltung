@@ -15,6 +15,7 @@ namespace Bar_Verwaltung
         public Login()
         {
             InitializeComponent();
+            SqlCom.CheckDatabaseExists("Bar3IT22");
         }
 
         private void btn_1_Click(object sender, EventArgs e) //Markus why btn_1 name
