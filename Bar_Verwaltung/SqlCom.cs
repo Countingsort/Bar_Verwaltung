@@ -41,7 +41,7 @@ namespace Bar_Verwaltung
         private static void CreateDatabase()
         {
 
-            cmd.CommandText = "CREATE DATABASE Bank3IT22";
+            cmd.CommandText = "CREATE DATABASE Bar3IT22";
             try
             {
                 con.Open();
@@ -61,9 +61,9 @@ namespace Bar_Verwaltung
                 con.Open();
                 cmd.CommandText = "Create Table TFinance(ID int identity(1,1),HMS nvarchar(50),PID int,Date Date);";
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "Create Table TLogin(UserID int,Username nvarchar(50),Password nvarchar(64),Permission nvarchar(1),Salt nvarchar(16));";
+                cmd.CommandText = "Create Table TLogin(UserID int IDENTITY (1,1) PRIMARY KEY,Username nvarchar(50),Password nvarchar(128));";
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "Create Table TStock(ID int identity(1,1),Date date,number1 nvarchar(50),number2 nvarchar(50),Amount int,Message nvarchar(50));";
+                cmd.CommandText = "Create Table TStock(ID int identity(1,1),Boolean Drink,nvarchar(50) Item,int Quantaty, int Price,text Ingrediens;";//not finished
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -72,6 +72,29 @@ namespace Bar_Verwaltung
                 MessageBox.Show(x.ToString());
             }
 
+        }
+        public static string Login(string user)
+        {
+            string pw = string.Empty;
+
+            cmd.CommandText = string.Format("Slect Password from TLogin where password = {0};",user);
+
+            return pw;
+        }
+        public static void Register(string user, string pw)
+        {
+            string hpw = BCrypt.HashPassword(pw, BCrypt.GenerateSalt());//hasped password
+            cmd.CommandText = string.Format("Insert into TLogin(Username,Password) Values ({0},{1});", user, hpw);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public static void NewItem()
+        {
+            cmd.CommandText = string.Format("Insert into TStock()");
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }
