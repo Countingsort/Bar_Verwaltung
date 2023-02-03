@@ -25,7 +25,7 @@ namespace Bar_Verwaltung
             bool exist = SqlCom.Login(user, pw);
             if (exist)
             {
-                Form1 Frm_Main = new Form1();
+                Form1 Frm_Main = new Form1(); // opens main form
                 this.Hide();
                 Frm_Main.ShowDialog();
                 this.Show();
