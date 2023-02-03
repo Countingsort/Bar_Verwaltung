@@ -26,7 +26,7 @@ namespace Bar_Verwaltung
                 txtB_2.Clear();
                 txtB_3.Clear();
             }
-            else if (txtB_2.Text.Equals(txtB_3.Text))
+            else if (!txtB_2.Text.Equals(txtB_3.Text))
             {
                 MessageBox.Show("The Password don't match up!");
             }

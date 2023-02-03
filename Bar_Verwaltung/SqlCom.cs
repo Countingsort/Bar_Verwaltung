@@ -76,18 +76,16 @@ namespace Bar_Verwaltung
         public static bool Login(string user, string password)
         {
             string pw = string.Empty;
-
-            cmd.CommandText = string.Format("Select Password from TLogin where Username = {0};",user);
+            cmd.CommandText = string.Format("Select Password from TLogin where Username = '{0}';",user);
             con.Open();
             cmd.ExecuteNonQuery();
             SqlDataReader reader = cmd.ExecuteReader();
-
+            
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
                     pw = reader.GetString(0);
-
                 }
             }
 
@@ -99,14 +97,14 @@ namespace Bar_Verwaltung
         public static void Register(string user, string pw)
         {
             string hpw = BCrypt.HashPassword(pw, BCrypt.GenerateSalt());//hasped password
-            cmd.CommandText = string.Format("Insert into TLogin(Username,Password) Values ({0},{1});", user, hpw);
+            cmd.CommandText = string.Format("Insert into TLogin(Username,Password) Values ('{0}','{1}');", user, hpw);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        public static void NewItem()
+        public static void NewItem(int drink,string name, int quantaty, double price, string ingrediens)
         {
-            cmd.CommandText = string.Format("Insert into TStock()");
+            cmd.CommandText = string.Format("Insert into TStock(Drink, Item, Quantyty, Price,Ingrediens) Values({0},'{1}',{2},{3},'{4}');",drink,name,quantaty,price,ingrediens);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
