@@ -58,7 +58,7 @@ namespace Bar_Verwaltung
         {
             try
             {
-                con.Open();
+                con.Open(); //coment
                 cmd.CommandText = "Create Table TFinance(ID int identity(1,1),HMS nvarchar(50),PID int,Date Date);";
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "Create Table TLogin(UserID int IDENTITY (1,1) PRIMARY KEY,Username nvarchar(50),Password nvarchar(128));";
