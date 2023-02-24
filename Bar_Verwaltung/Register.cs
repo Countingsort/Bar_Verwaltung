@@ -39,6 +39,7 @@ namespace Bar_Verwaltung
             {
                 SqlCom.Register(txtB_1.Text, txtB_2.Text);
                 MessageBox.Show("You Account has been created!");
+                this.Close();
             }
         }
     }

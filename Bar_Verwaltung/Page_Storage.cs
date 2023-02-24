@@ -15,6 +15,7 @@ namespace Bar_Verwaltung
         public Page_Storage()
         {
             InitializeComponent();
+            dgv_Data.DataSource = SqlCom.DataGrid("TStock");
         }
     }
 }

@@ -4,8 +4,7 @@ namespace Bar_Verwaltung
     {
         public Form1()
         {
-            InitializeComponent();
-            SqlCom.NewItem(1,"Wasser",500, 3.5,"Wasser");
+            InitializeComponent();             
         }
 
         private void btn_Storage_Click(object sender, EventArgs e)
