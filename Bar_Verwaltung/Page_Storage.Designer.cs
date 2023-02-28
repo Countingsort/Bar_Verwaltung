@@ -41,7 +41,9 @@
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.lbl_Storage = new System.Windows.Forms.Label();
+            this.dgv_Data = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_Price
@@ -157,10 +159,21 @@
             this.lbl_Storage.TabIndex = 18;
             this.lbl_Storage.Text = "Storage";
             // 
+            // dgv_Data
+            // 
+            this.dgv_Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Data.Location = new System.Drawing.Point(326, 18);
+            this.dgv_Data.Name = "dgv_Data";
+            this.dgv_Data.RowTemplate.Height = 25;
+            this.dgv_Data.Size = new System.Drawing.Size(455, 308);
+            this.dgv_Data.TabIndex = 31;
+            // 
             // Page_Storage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgv_Data);
             this.Controls.Add(this.txt_Price);
             this.Controls.Add(this.txt_FSK);
             this.Controls.Add(this.ckb_Drink);
@@ -177,6 +190,7 @@
             this.Name = "Page_Storage";
             this.Size = new System.Drawing.Size(800, 375);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +211,6 @@
         private Button btn_Edit;
         private Button btn_Add;
         private Label lbl_Storage;
+        private DataGridView dgv_Data;
     }
 }

@@ -15,13 +15,16 @@ namespace Bar_Verwaltung
         public Login()
         {
             InitializeComponent();
-            SqlCom.CheckDatabaseExists("Bar3IT22");
+            if (!SqlCom.CheckDatabaseExists("Bar3IT22"))
+            {
+                MessageBox.Show("Database error /Login/L20");
+            }
         }
 
         private void btn_1_Click(object sender, EventArgs e) //Markus why btn_1 name
         {
             string user = txtB_1.Text;
-            string pw = txtB_2.Text;
+            string pw = txtB_2.Text;        
             bool exist = SqlCom.Login(user, pw);
             if (exist)
             {
