@@ -19,7 +19,6 @@ namespace Bar_Verwaltung
             {
                 MessageBox.Show("Database error /Login/L20");
             }
-            
         }
 
         private void btn_1_Click(object sender, EventArgs e) //Markus why btn_1 name

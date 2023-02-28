@@ -4,7 +4,8 @@ namespace Bar_Verwaltung
     {
         public Form1()
         {
-            InitializeComponent();             
+            InitializeComponent();
+            SqlCom.CheckDatabaseExists("Bar3IT22");
         }
 
         private void btn_Storage_Click(object sender, EventArgs e)

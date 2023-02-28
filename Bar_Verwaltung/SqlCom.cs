@@ -81,6 +81,7 @@ namespace Bar_Verwaltung
         public static bool Login(string user, string password)
         {
             string pw = string.Empty;
+
             cmd.CommandText = string.Format("Select Password from TLogin where Username = '{0}';",user);
             con.Open();
             cmd.ExecuteNonQuery();
