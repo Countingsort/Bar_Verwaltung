@@ -15,6 +15,7 @@ namespace Bar_Verwaltung
         public Page_Finance()
         {
             InitializeComponent();
+            lb_date.Text = DateTime.Now.ToString("dd-MM-yyyy");
         }
     }
 }
