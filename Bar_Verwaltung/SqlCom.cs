@@ -38,7 +38,7 @@ namespace Bar_Verwaltung
                 con = new SqlConnection("Server = (localdb)\\MSSQLLocalDB;Integrated Security = true;Database = Bar3IT22;");
                 cmd.Connection = con;
                 CreateTable();
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser",0,"0");
                 return false;
             }
 
