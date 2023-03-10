@@ -1,2 +1,2 @@
 # Bar_Verwaltung
-Bar Verwaltung ('von Schülern')
+Bar Verwaltung ('von Profis')
