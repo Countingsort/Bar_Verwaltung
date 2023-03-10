@@ -17,5 +17,19 @@ namespace Bar_Verwaltung
             InitializeComponent();
             lb_date.Text = DateTime.Now.ToString("dd-MM-yyyy");
         }
+        public void AddButtons()
+        {
+            int counter = 0;
+            DataTable dt = new DataTable();
+            dt = SqlCom.DataGrid("TStock");
+            foreach ()
+            {
+                Button b = new Button();
+                b.Name = "btn_" + counter;
+                b.Size = new Size(50, 50);
+                b.Text = "";
+                counter++;
+            }
+        }
     }
 }

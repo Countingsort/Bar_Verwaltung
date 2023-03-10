@@ -8,7 +8,7 @@ namespace Bar_Verwaltung
 {
     static internal class SQLCommunicator
     {
-        public static void lgn()
+        public static void GetItems()
         {
 
         }
