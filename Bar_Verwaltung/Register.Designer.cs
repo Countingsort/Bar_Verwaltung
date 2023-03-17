@@ -75,9 +75,9 @@
             this.lb_1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lb_1.Location = new System.Drawing.Point(85, 9);
             this.lb_1.Name = "lb_1";
-            this.lb_1.Size = new System.Drawing.Size(175, 32);
+            this.lb_1.Size = new System.Drawing.Size(159, 32);
             this.lb_1.TabIndex = 4;
-            this.lb_1.Text = "Regrestrieren ";
+            this.lb_1.Text = "Registrieren ";
             // 
             // lb_2
             // 

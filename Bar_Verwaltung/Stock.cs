@@ -11,7 +11,7 @@ namespace Bar_Verwaltung
         #region variables
         private bool _drink, _alc;
         private string _item, _ingredians;
-        private int _quantaty, _fsk;
+        private int _Id, _quantaty, _fsk;
         private double _price, _percentage;
         #endregion
 
@@ -82,6 +82,17 @@ namespace Bar_Verwaltung
                 _fsk = value;
             }
         }
+        public int ID
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                _Id = value;
+            }
+        }
         public double price
         {
             get 
@@ -122,6 +133,13 @@ namespace Bar_Verwaltung
             this.Item = item;
             this.ingredians = ingredians;
             this.quantaty = quantaty;
+            this.price = price;
+        }
+
+        public Stock(int Id, string item, double price)
+        {
+            this.ID = Id;
+            this.Item = item;
             this.price = price;
         }
 

@@ -78,6 +78,7 @@
             // 
             // TabLayPan
             // 
+            this.TabLayPan.AutoScroll = true;
             this.TabLayPan.ColumnCount = 4;
             this.TabLayPan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.TabLayPan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));

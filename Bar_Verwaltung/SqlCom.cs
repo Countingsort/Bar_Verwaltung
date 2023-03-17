@@ -39,6 +39,17 @@ namespace Bar_Verwaltung
                 cmd.Connection = con;
                 CreateTable();
                 SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser"); 
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
                 return false;
             }
 
