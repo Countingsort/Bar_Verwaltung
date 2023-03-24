@@ -640,11 +640,18 @@ namespace Bar_Verwaltung
             }
 
             char minor = (char)0;
-
-            if (salt[0] != '$' || salt[1] != '2')
+            try
             {
-                throw new ArgumentException("Invalid salt version");
+                if (salt[0] != '$' || salt[1] != '2')
+                {
+                    throw new ArgumentException("Invalid salt version");
+                }
             }
+            catch
+            {
+
+            }
+
 
             int offset;
             if (salt[1] != '$')

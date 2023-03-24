@@ -32,6 +32,7 @@
             this.btn_Finance = new System.Windows.Forms.Button();
             this.btn_Settings = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.page_Storage2 = new Bar_Verwaltung.Page_Storage();
             this.page_Settings1 = new Bar_Verwaltung.Page_Settings();
             this.page_Finance1 = new Bar_Verwaltung.Page_Finance();
             this.panel1.SuspendLayout();
@@ -69,12 +70,20 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.page_Storage2);
             this.panel1.Controls.Add(this.page_Settings1);
             this.panel1.Controls.Add(this.page_Finance1);
             this.panel1.Location = new System.Drawing.Point(1, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 375);
             this.panel1.TabIndex = 3;
+            // 
+            // page_Storage2
+            // 
+            this.page_Storage2.Location = new System.Drawing.Point(0, 0);
+            this.page_Storage2.Name = "page_Storage2";
+            this.page_Storage2.Size = new System.Drawing.Size(800, 375);
+            this.page_Storage2.TabIndex = 2;
             // 
             // page_Settings1
             // 
@@ -101,6 +110,7 @@
             this.Controls.Add(this.btn_Storage);
             this.Name = "Form1";
             this.Text = "Bar Manageing";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -115,5 +125,6 @@
         private Page_Storage page_Storage1;
         private Page_Settings page_Settings1;
         private Page_Finance page_Finance1;
+        private Page_Storage page_Storage2;
     }
 }
