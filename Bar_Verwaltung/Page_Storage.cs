@@ -48,7 +48,7 @@ namespace Bar_Verwaltung
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             int drink;
-            int alcoholic;
+            int alcoholic; //idk why propperply need to change this
             if (ckb_Drink.Checked)
             {
                 drink = 1;
