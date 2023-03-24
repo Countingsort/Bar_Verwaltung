@@ -16,6 +16,61 @@ namespace Bar_Verwaltung
         {
             InitializeComponent();
             lb_date.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            AddButtons();
+        }
+        public void AddButtons()
+        {
+            int counter1 = 0;
+            int counter2 = 0;
+            int counter3 = 0;
+            List<Stock> list = Stock.getItems();
+
+            foreach (Stock i in list)
+            {
+                Button b = new Button();
+                b.Name = "btn_" + i.ID;
+                b.Size = new Size(90, 90);
+                b.Text = list[counter1].Item;
+                b.Click += new EventHandler(this.button_click);
+                if (counter2 <= 3)
+                {
+                    TabLayPan.Controls.Add(b, counter2, counter3);
+                    counter2++;
+                }
+                else
+                {
+                    counter2 = 0;
+                    counter3++;
+                }
+                counter1++;
+            }
+        }
+        void button_click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            string BtnName = btn.Name;
+            string[] IDs = BtnName.Split("_");
+            txtB1.Text += IDs[1];
+            txtB1.Text += ";";
+
+            if(txtBPrice.Text != "")
+            {
+                double currentPrice = Convert.ToDouble(txtBPrice.Text);
+                List<Stock> list = Stock.getItems();
+
+
+            }
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            String[] IDs = txtB1.Text.Split(";");
+            txtB1.Text = "";
+            for(int i = 0; i < IDs.Length-2; i++)
+            {
+                txtB1.Text += IDs[i];
+                txtB1.Text += ";";
+            }
         }
     }
 }

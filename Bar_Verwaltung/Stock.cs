@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Bar_Verwaltung
         #region variables
         private bool _drink, _alc;
         private string _item, _ingredians;
-        private int _quantaty, _fsk;
+        private int _Id, _quantaty, _fsk;
         private double _price, _percentage;
         #endregion
 
@@ -82,6 +83,17 @@ namespace Bar_Verwaltung
                 _fsk = value;
             }
         }
+        public int ID
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                _Id = value;
+            }
+        }
         public double price
         {
             get 
@@ -125,6 +137,13 @@ namespace Bar_Verwaltung
             this.price = price;
         }
 
+        public Stock(int Id, string item, double price)
+        {
+            this.ID = Id;
+            this.Item = item;
+            this.price = price;
+        }
+
 /// <summary>
 /// drink
 /// </summary>
@@ -147,6 +166,26 @@ namespace Bar_Verwaltung
             this.fsk = fsk;
             this.price = price;
             this.percentage = percentage;
+        }
+        #endregion
+
+        #region Methods
+        public static List<Stock> getItems()
+        {
+            DataTable dt = new DataTable();
+            dt = SqlCom.DataGrid("TStock");
+
+            List<Stock> list = new List<Stock> { };
+            foreach (DataRow row in dt.Rows)
+            {
+                int Id = Convert.ToInt32(row["ID"]);
+                string name = row["Item"].ToString();
+                double price = Convert.ToDouble(row["Price"]);
+
+                Stock s = new Stock(Id, name, price);
+                list.Add(s);
+            }
+            return list;
         }
         #endregion
     }
