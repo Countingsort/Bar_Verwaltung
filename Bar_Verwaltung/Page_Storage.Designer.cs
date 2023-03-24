@@ -87,41 +87,41 @@
             // 
             this.txt_Percantage.Location = new System.Drawing.Point(137, 273);
             this.txt_Percantage.Name = "txt_Percantage";
+            this.txt_Percantage.PlaceholderText = "Percantage";
             this.txt_Percantage.Size = new System.Drawing.Size(69, 23);
             this.txt_Percantage.TabIndex = 26;
-            this.txt_Percantage.Text = "Percantage";
             // 
             // txt_Ingridiens
             // 
             this.txt_Ingridiens.Location = new System.Drawing.Point(50, 238);
             this.txt_Ingridiens.Name = "txt_Ingridiens";
+            this.txt_Ingridiens.PlaceholderText = "Ingridiens";
             this.txt_Ingridiens.Size = new System.Drawing.Size(237, 23);
             this.txt_Ingridiens.TabIndex = 25;
-            this.txt_Ingridiens.Text = "Ingridiens";
             // 
             // txt_Quantaty
             // 
             this.txt_Quantaty.Location = new System.Drawing.Point(156, 209);
             this.txt_Quantaty.Name = "txt_Quantaty";
+            this.txt_Quantaty.PlaceholderText = "Quantaty";
             this.txt_Quantaty.Size = new System.Drawing.Size(50, 23);
             this.txt_Quantaty.TabIndex = 24;
-            this.txt_Quantaty.Text = "Quantaty";
             // 
             // txt_Name
             // 
             this.txt_Name.Location = new System.Drawing.Point(50, 209);
             this.txt_Name.Name = "txt_Name";
+            this.txt_Name.PlaceholderText = "Name";
             this.txt_Name.Size = new System.Drawing.Size(100, 23);
             this.txt_Name.TabIndex = 23;
-            this.txt_Name.Text = "Name";
             // 
             // txt_ID
             // 
             this.txt_ID.Location = new System.Drawing.Point(50, 170);
             this.txt_ID.Name = "txt_ID";
+            this.txt_ID.PlaceholderText = "ID";
             this.txt_ID.Size = new System.Drawing.Size(100, 23);
             this.txt_ID.TabIndex = 22;
-            this.txt_ID.Text = "ID";
             // 
             // btn_Delete
             // 

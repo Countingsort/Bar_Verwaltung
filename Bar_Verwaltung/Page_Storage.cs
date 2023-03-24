@@ -15,41 +15,63 @@ namespace Bar_Verwaltung
         public Page_Storage()
         {
             InitializeComponent();
-            //dgv_Data.DataSource = SqlCom.DataGrid("TStock");
+            dgv_Data.DataSource = SqlCom.DataGrid("TStock");
+            txt_FSK.Items.Add("0");
+            txt_FSK.Items.Add("16");
+            txt_FSK.Items.Add("18");
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            //int drink;
-            //int alcoholic;
-            //if (ckb_Drink.Checked)
-            //{
-            //    drink = 1;
-            //}
-            //else
-            //{
-            //    drink = 0;
-            //}
+            int drink;
+            int alcoholic;
+            if (ckb_Drink.Checked)
+            {
+                drink = 1;
+            }
+            else
+            {
+                drink = 0;
+            }
 
-            //if (ckb_Alcoholic.Checked)
-            //{
-            //    drink = 1;
-            //}
-            //else
-            //{
-            //    drink = 0;
-            //}
-            //SqlCom.NewItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text,Convert.ToDouble(txt_Percantage.Text),txt_FSK.Text);
+            if (ckb_Alcoholic.Checked)
+            {
+                drink = 1;
+            }
+            else
+            {
+                drink = 0;
+            }
+            SqlCom.NewItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, Convert.ToDouble(txt_Percantage.Text), txt_FSK.Text);
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
+            int drink;
+            int alcoholic;
+            if (ckb_Drink.Checked)
+            {
+                drink = 1;
+            }
+            else
+            {
+                drink = 0;
+            }
 
+            if (ckb_Alcoholic.Checked)
+            {
+                drink = 1;
+            }
+            else
+            {
+                drink = 0;
+            }
+            SqlCom.EditItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, Convert.ToDouble(txt_Percantage.Text), txt_FSK.Text, Convert.ToInt32(txt_ID.Text));
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            //SqlCom.DelItem(Convert.ToInt32(txt_ID.Text));
+            SqlCom.DelItem(Convert.ToInt32(txt_ID.Text));
         }
     }
 }
