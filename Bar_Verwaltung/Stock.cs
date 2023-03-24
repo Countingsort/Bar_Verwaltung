@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -165,6 +166,26 @@ namespace Bar_Verwaltung
             this.fsk = fsk;
             this.price = price;
             this.percentage = percentage;
+        }
+        #endregion
+
+        #region Methods
+        public static List<Stock> getItems()
+        {
+            DataTable dt = new DataTable();
+            dt = SqlCom.DataGrid("TStock");
+
+            List<Stock> list = new List<Stock> { };
+            foreach (DataRow row in dt.Rows)
+            {
+                int Id = Convert.ToInt32(row["ID"]);
+                string name = row["Item"].ToString();
+                double price = Convert.ToDouble(row["Price"]);
+
+                Stock s = new Stock(Id, name, price);
+                list.Add(s);
+            }
+            return list;
         }
         #endregion
     }

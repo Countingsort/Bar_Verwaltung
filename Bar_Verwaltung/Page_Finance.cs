@@ -23,24 +23,12 @@ namespace Bar_Verwaltung
             int counter1 = 0;
             int counter2 = 0;
             int counter3 = 0;
-            DataTable dt = new DataTable();
-            dt = SqlCom.DataGrid("TStock");
+            List<Stock> list = Stock.getItems();
 
-            List<Stock> list = new List<Stock>{};
-            foreach (DataRow row in dt.Rows)
-            {
-                int Id = Convert.ToInt32(row["ID"]);
-                string name = row["Item"].ToString();
-                double price = Convert.ToDouble(row["Price"]);
-
-                Stock s = new Stock(Id, name, price);
-                list.Add(s);
-            }
-
-            foreach(Stock i in list)
+            foreach (Stock i in list)
             {
                 Button b = new Button();
-                b.Name = "btn_" + counter1;
+                b.Name = "btn_" + i.ID;
                 b.Size = new Size(90, 90);
                 b.Text = list[counter1].Item;
                 b.Click += new EventHandler(this.button_click);
@@ -59,7 +47,30 @@ namespace Bar_Verwaltung
         }
         void button_click(object sender, EventArgs e)
         {
+            Button btn = sender as Button;
+            string BtnName = btn.Name;
+            string[] IDs = BtnName.Split("_");
+            txtB1.Text += IDs[1];
+            txtB1.Text += ";";
 
+            if(txtBPrice.Text != "")
+            {
+                double currentPrice = Convert.ToDouble(txtBPrice.Text);
+                List<Stock> list = Stock.getItems();
+
+
+            }
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            String[] IDs = txtB1.Text.Split(";");
+            txtB1.Text = "";
+            for(int i = 0; i < IDs.Length-2; i++)
+            {
+                txtB1.Text += IDs[i];
+                txtB1.Text += ";";
+            }
         }
     }
 }

@@ -30,11 +30,12 @@
         {
             this.lb_date = new System.Windows.Forms.Label();
             this.lb_titel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtB1 = new System.Windows.Forms.TextBox();
+            this.txtBPrice = new System.Windows.Forms.TextBox();
             this.TabLayPan = new System.Windows.Forms.TableLayoutPanel();
             this.btn_main = new System.Windows.Forms.Button();
+            this.lb_Price = new System.Windows.Forms.Label();
+            this.btn_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lb_date
@@ -55,26 +56,19 @@
             this.lb_titel.TabIndex = 2;
             this.lb_titel.Text = "Tageslösung";
             // 
-            // textBox1
+            // txtB1
             // 
-            this.textBox1.Location = new System.Drawing.Point(14, 340);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(635, 23);
-            this.textBox1.TabIndex = 3;
+            this.txtB1.Location = new System.Drawing.Point(14, 340);
+            this.txtB1.Name = "txtB1";
+            this.txtB1.Size = new System.Drawing.Size(635, 23);
+            this.txtB1.TabIndex = 3;
             // 
-            // textBox2
+            // txtBPrice
             // 
-            this.textBox2.Location = new System.Drawing.Point(655, 139);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 23);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(655, 226);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(113, 23);
-            this.textBox3.TabIndex = 5;
+            this.txtBPrice.Location = new System.Drawing.Point(655, 149);
+            this.txtBPrice.Name = "txtBPrice";
+            this.txtBPrice.Size = new System.Drawing.Size(113, 23);
+            this.txtBPrice.TabIndex = 4;
             // 
             // TabLayPan
             // 
@@ -102,15 +96,35 @@
             this.btn_main.Text = "Fertig";
             this.btn_main.UseVisualStyleBackColor = true;
             // 
+            // lb_Price
+            // 
+            this.lb_Price.AutoSize = true;
+            this.lb_Price.Location = new System.Drawing.Point(669, 121);
+            this.lb_Price.Name = "lb_Price";
+            this.lb_Price.Size = new System.Drawing.Size(35, 15);
+            this.lb_Price.TabIndex = 8;
+            this.lb_Price.Text = "Preis:";
+            // 
+            // btn_back
+            // 
+            this.btn_back.Location = new System.Drawing.Point(666, 202);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(102, 41);
+            this.btn_back.TabIndex = 9;
+            this.btn_back.Text = "Zurück";
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // Page_Finance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_back);
+            this.Controls.Add(this.lb_Price);
             this.Controls.Add(this.btn_main);
             this.Controls.Add(this.TabLayPan);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBPrice);
+            this.Controls.Add(this.txtB1);
             this.Controls.Add(this.lb_titel);
             this.Controls.Add(this.lb_date);
             this.Name = "Page_Finance";
@@ -123,10 +137,11 @@
         #endregion
         private Label lb_date;
         private Label lb_titel;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtB1;
+        private TextBox txtBPrice;
         private TableLayoutPanel TabLayPan;
         private Button btn_main;
+        private Label lb_Price;
+        private Button btn_back;
     }
 }
