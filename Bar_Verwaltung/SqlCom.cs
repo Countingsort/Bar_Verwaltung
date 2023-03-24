@@ -97,8 +97,15 @@ namespace Bar_Verwaltung
 
             reader.Close();
             con.Close();
-
-            return BCrypt.CheckPassword(password,pw);
+            try
+            {
+                return BCrypt.CheckPassword(password, pw);
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
         public static void Register(string user, string pw)
         {

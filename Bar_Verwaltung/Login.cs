@@ -33,6 +33,10 @@ namespace Bar_Verwaltung
                 Frm_Main.ShowDialog();
                 this.Show();
             }
+            else
+            {
+                MessageBox.Show("Wrong Password or Username");
+            }
         }
 
         private void btn_2_Click(object sender, EventArgs e)
