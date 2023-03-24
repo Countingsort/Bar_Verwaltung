@@ -32,8 +32,8 @@
             this.txtB_2 = new System.Windows.Forms.TextBox();
             this.lb_3 = new System.Windows.Forms.Label();
             this.lb_2 = new System.Windows.Forms.Label();
-            this.btn_1 = new System.Windows.Forms.Button();
-            this.btn_2 = new System.Windows.Forms.Button();
+            this.btn_Login = new System.Windows.Forms.Button();
+            this.btn_Register = new System.Windows.Forms.Button();
             this.lb_1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -69,25 +69,25 @@
             this.lb_2.TabIndex = 3;
             this.lb_2.Text = "Benutzername";
             // 
-            // btn_1
+            // btn_Login
             // 
-            this.btn_1.Location = new System.Drawing.Point(41, 201);
-            this.btn_1.Name = "btn_1";
-            this.btn_1.Size = new System.Drawing.Size(75, 23);
-            this.btn_1.TabIndex = 4;
-            this.btn_1.Text = "Login";
-            this.btn_1.UseVisualStyleBackColor = true;
-            this.btn_1.Click += new System.EventHandler(this.btn_1_Click);
+            this.btn_Login.Location = new System.Drawing.Point(41, 201);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(75, 23);
+            this.btn_Login.TabIndex = 4;
+            this.btn_Login.Text = "Login";
+            this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.btn_1_Click);
             // 
-            // btn_2
+            // btn_Register
             // 
-            this.btn_2.Location = new System.Drawing.Point(141, 201);
-            this.btn_2.Name = "btn_2";
-            this.btn_2.Size = new System.Drawing.Size(75, 23);
-            this.btn_2.TabIndex = 5;
-            this.btn_2.Text = "New User";
-            this.btn_2.UseVisualStyleBackColor = true;
-            this.btn_2.Click += new System.EventHandler(this.btn_2_Click);
+            this.btn_Register.Location = new System.Drawing.Point(141, 201);
+            this.btn_Register.Name = "btn_Register";
+            this.btn_Register.Size = new System.Drawing.Size(75, 23);
+            this.btn_Register.TabIndex = 5;
+            this.btn_Register.Text = "New User";
+            this.btn_Register.UseVisualStyleBackColor = true;
+            this.btn_Register.Click += new System.EventHandler(this.btn_2_Click);
             // 
             // lb_1
             // 
@@ -105,8 +105,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(280, 251);
             this.Controls.Add(this.lb_1);
-            this.Controls.Add(this.btn_2);
-            this.Controls.Add(this.btn_1);
+            this.Controls.Add(this.btn_Register);
+            this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.lb_2);
             this.Controls.Add(this.lb_3);
             this.Controls.Add(this.txtB_2);
@@ -124,8 +124,8 @@
         private TextBox txtB_2;
         private Label lb_3;
         private Label lb_2;
-        private Button btn_1;
-        private Button btn_2;
+        private Button btn_Login;
+        private Button btn_Register;
         private Label lb_1;
     }
 }

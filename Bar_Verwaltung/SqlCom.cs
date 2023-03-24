@@ -38,18 +38,7 @@ namespace Bar_Verwaltung
                 con = new SqlConnection("Server = (localdb)\\MSSQLLocalDB;Integrated Security = true;Database = Bar3IT22;");
                 cmd.Connection = con;
                 CreateTable();
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser"); 
-                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser");
+                SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser",0,"0");
                 return false;
             }
 
@@ -79,7 +68,7 @@ namespace Bar_Verwaltung
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "Create Table TLogin(UserID int IDENTITY (1,1) PRIMARY KEY,Username nvarchar(50),Password nvarchar(128));";
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "Create Table TStock(ID int identity(1,1) PRIMARY KEY,Drink int,Item nvarchar(50),Quantaty int,Price int,Ingrediens text);";//not finished
+                cmd.CommandText = "Create Table TStock(ID int identity(1,1) PRIMARY KEY,Drink int,Item nvarchar(50),Quantaty int,Price decimal(15,2),Ingrediens text,Percentage decimal(15,2),FSK nvarchar(2));";//not finished
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -108,8 +97,15 @@ namespace Bar_Verwaltung
 
             reader.Close();
             con.Close();
-
-            return BCrypt.CheckPassword(password,pw);
+            try
+            {
+                return BCrypt.CheckPassword(password, pw);
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
         public static void Register(string user, string pw)
         {
@@ -119,10 +115,17 @@ namespace Bar_Verwaltung
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        public static void NewItem(int drink,string name, int quantaty, double price, string ingrediens)
+        public static void NewItem(int drink,string name, int quantaty, double price, string ingrediens, double percentage,string fsk)
         {
             string pri = price.ToString(new CultureInfo("en-US"));
-            cmd.CommandText = string.Format("Insert into TStock(Drink, Item, Quantaty, Price,Ingrediens) Values({0},'{1}',{2},{3},'{4}');",drink,name,quantaty,pri,ingrediens);
+            cmd.CommandText = string.Format("Insert into TStock Values({0},'{1}',{2},{3},'{4}',{5},'{6}');", drink,name,quantaty,pri,ingrediens,percentage,fsk);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public static void DelItem(int id)
+        {
+            cmd.CommandText = string.Format("Delete from TSock where ID={0}",id);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();

@@ -10,7 +10,7 @@ namespace Bar_Verwaltung
 
         private void btn_Storage_Click(object sender, EventArgs e)
         {
-            page_Storage1.BringToFront();
+            page_Storage2.BringToFront();
         }
 
         private void btn_Finance_Click(object sender, EventArgs e)
@@ -21,6 +21,11 @@ namespace Bar_Verwaltung
         private void btn_Settings_Click(object sender, EventArgs e)
         {
             page_Settings1.BringToFront();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            page_Storage2.BringToFront();
         }
     }
 }
