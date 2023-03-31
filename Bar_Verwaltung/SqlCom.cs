@@ -139,5 +139,14 @@ namespace Bar_Verwaltung
             adapter.Fill(dt);
             return dt;
         }
+        public static void EditItem(int drink, string name, int quantaty, double price, string ingrediens, double percentage, string fsk, int ID)
+        {
+            string pri = price.ToString(new CultureInfo("en-US"));
+            string per = percentage.ToString(new CultureInfo("en-US"));
+            cmd.CommandText = string.Format("Update TStock Set Drink = {0},Item='{1}',Quantaty={2},Price={3},Ingrediens='{4}',Percentage={5},fsk='{6}' where ID={7};", drink, name, quantaty, pri, ingrediens, per, fsk,ID);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }
