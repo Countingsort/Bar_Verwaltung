@@ -46,14 +46,14 @@ namespace Bar_Verwaltung
                 fsk = "0";
             }
 
-            try
-            {
+            //try
+            //{
                 SqlCom.NewItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, percent, fsk);
-            }
-            catch
-            {
+            //}
+            //catch
+            //{
 
-            }
+            //}
             
         }
 
@@ -83,14 +83,14 @@ namespace Bar_Verwaltung
                 fsk = "0";
             }
 
-            try
-            {
+            //try
+            //{
                 SqlCom.EditItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, percent, fsk, Convert.ToInt32(txt_ID.Text));
-            }
-            catch
-            {
+            //}
+            //catch
+            //{
 
-            }
+            //}
             
         }
 

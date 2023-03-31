@@ -17,7 +17,7 @@ namespace Bar_Verwaltung
             InitializeComponent();
             if (!SqlCom.CheckDatabaseExists("Bar3IT22"))
             {
-                MessageBox.Show("Database error /Login/L20");
+             
             }
         }
 
