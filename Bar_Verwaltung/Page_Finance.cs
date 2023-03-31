@@ -50,15 +50,22 @@ namespace Bar_Verwaltung
             Button btn = sender as Button;
             string BtnName = btn.Name;
             string[] IDs = BtnName.Split("_");
-            txtB1.Text += IDs[1];
+            int ID = Convert.ToInt32(IDs[1]);
+            txtB1.Text += ID;
             txtB1.Text += ";";
+
+            List<Stock> list = Stock.getItems();
+            double itemprice = list[ID].price;
 
             if(txtBPrice.Text != "")
             {
                 double currentPrice = Convert.ToDouble(txtBPrice.Text);
-                List<Stock> list = Stock.getItems();
-
-
+                double nextprice = currentPrice + itemprice;
+                txtBPrice.Text = nextprice.ToString();
+            }
+            else
+            {
+                txtBPrice.Text = itemprice.ToString();
             }
         }
 
