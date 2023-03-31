@@ -24,7 +24,8 @@ namespace Bar_Verwaltung
         private void btn_Add_Click(object sender, EventArgs e)
         {
             int drink;
-            int alcoholic;
+            double percent;
+            string fsk;
             if (ckb_Drink.Checked)
             {
                 drink = 1;
@@ -36,19 +37,32 @@ namespace Bar_Verwaltung
 
             if (ckb_Alcoholic.Checked)
             {
-                drink = 1;
+                percent = Convert.ToDouble(txt_Percantage.Text);
+                fsk = txt_FSK.Text;
             }
             else
             {
-                drink = 0;
+                percent = 0;
+                fsk = "0";
             }
-            SqlCom.NewItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, Convert.ToDouble(txt_Percantage.Text), txt_FSK.Text);
+
+            try
+            {
+                SqlCom.NewItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, percent, fsk);
+            }
+            catch
+            {
+
+            }
+            
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             int drink;
-            int alcoholic; //idk why propperply need to change this
+            double percent;
+            string fsk;
+
             if (ckb_Drink.Checked)
             {
                 drink = 1;
@@ -60,13 +74,24 @@ namespace Bar_Verwaltung
 
             if (ckb_Alcoholic.Checked)
             {
-                drink = 1;
+                percent = Convert.ToDouble(txt_Percantage.Text);
+                fsk = txt_FSK.Text;
             }
             else
             {
-                drink = 0;
+                percent = 0;
+                fsk = "0";
             }
-            SqlCom.EditItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, Convert.ToDouble(txt_Percantage.Text), txt_FSK.Text, Convert.ToInt32(txt_ID.Text));
+
+            try
+            {
+                SqlCom.EditItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, percent, fsk, Convert.ToInt32(txt_ID.Text));
+            }
+            catch
+            {
+
+            }
+            
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
