@@ -125,7 +125,7 @@ namespace Bar_Verwaltung
         }
         public static void DelItem(int id)
         {
-            cmd.CommandText = string.Format("Delete from TSock where ID={0}",id);
+            cmd.CommandText = string.Format("Delete from TSock where ID={0};",id);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
