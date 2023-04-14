@@ -55,28 +55,58 @@ namespace Bar_Verwaltung
             txtB1.Text += ";";
 
             List<Stock> list = Stock.getItems();
-            double itemprice = list[ID].price;
-
-            if(txtBPrice.Text != "")
+            try
             {
-                double currentPrice = Convert.ToDouble(txtBPrice.Text);
-                double nextprice = currentPrice + itemprice;
-                txtBPrice.Text = nextprice.ToString();
+                double itemprice = list[ID-1].price;
+                if (txtBPrice.Text != "")
+                {
+                    double currentPrice = Convert.ToDouble(txtBPrice.Text);
+                    double nextprice = currentPrice + itemprice;
+                    txtBPrice.Text = nextprice.ToString();
+                }
+                else
+                {
+                    txtBPrice.Text = itemprice.ToString();
+                }
             }
-            else
+            catch
             {
-                txtBPrice.Text = itemprice.ToString();
+                MessageBox.Show("Fehler");
             }
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
+            List<Stock> list = Stock.getItems();
             String[] IDs = txtB1.Text.Split(";");
             txtB1.Text = "";
+            double nextprice = 0.0;
             for(int i = 0; i < IDs.Length-2; i++)
             {
                 txtB1.Text += IDs[i];
                 txtB1.Text += ";";
+                nextprice += list[Convert.ToInt32(IDs[i])-1].price;
+            }
+            txtBPrice.Text = nextprice.ToString();
+        }
+
+        private void btn_main_Click(object sender, EventArgs e)
+        {
+            String[] IDs = txtB1.Text.Split(";");
+            List<int> ID = new List<int> { };
+            foreach(String i in IDs)
+            {
+                ID.Add(Convert.ToInt32(i));
+            }
+
+            int[] sortedID = Finance.getSortedArray(ID);
+
+            foreach(int i in sortedID)
+            {
+                if (sortedID[i] != 0)
+                {
+                    Finance finance = new Finance(i, sortedID[i], Convert.ToDateTime(lb_date.Text));
+                }
             }
         }
     }

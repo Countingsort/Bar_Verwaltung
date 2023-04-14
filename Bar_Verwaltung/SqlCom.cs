@@ -148,5 +148,12 @@ namespace Bar_Verwaltung
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        public static void newFinance(int HMS, int PID, DateTime dateTime)
+        {
+            cmd.CommandText = String.Format("Insert into TFinance Values({0}, {1}, {2});", HMS, PID, dateTime);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

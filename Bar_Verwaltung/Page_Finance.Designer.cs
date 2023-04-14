@@ -65,7 +65,7 @@
             // 
             // txtBPrice
             // 
-            this.txtBPrice.Location = new System.Drawing.Point(655, 149);
+            this.txtBPrice.Location = new System.Drawing.Point(666, 149);
             this.txtBPrice.Name = "txtBPrice";
             this.txtBPrice.Size = new System.Drawing.Size(113, 23);
             this.txtBPrice.TabIndex = 4;
@@ -95,6 +95,7 @@
             this.btn_main.TabIndex = 7;
             this.btn_main.Text = "Fertig";
             this.btn_main.UseVisualStyleBackColor = true;
+            this.btn_main.Click += new System.EventHandler(this.btn_main_Click);
             // 
             // lb_Price
             // 
