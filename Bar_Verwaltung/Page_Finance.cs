@@ -93,12 +93,21 @@ namespace Bar_Verwaltung
         private void btn_main_Click(object sender, EventArgs e)
         {
             String[] IDs = txtB1.Text.Split(";");
-            List<int> ProductsID = new List<int> { };
-            foreach(String ID in IDs)
+            List<int> ID = new List<int> { };
+            foreach(String i in IDs)
             {
-
+                ID.Add(Convert.ToInt32(i));
             }
 
+            int[] sortedID = Finance.getSortedArray(ID);
+
+            foreach(int i in sortedID)
+            {
+                if (sortedID[i] != 0)
+                {
+                    Finance finance = new Finance(i, sortedID[i], Convert.ToDateTime(lb_date.Text));
+                }
+            }
         }
     }
 }

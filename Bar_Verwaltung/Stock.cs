@@ -181,7 +181,6 @@ namespace Bar_Verwaltung
                 int Id = Convert.ToInt32(row["ID"]);
                 string name = row["Item"].ToString();
                 double price = Convert.ToDouble(row["Price"]);
-
                 Stock s = new Stock(Id, name, price);
                 list.Add(s);
             }
