@@ -19,6 +19,7 @@ namespace Bar_Verwaltung
             txt_FSK.Items.Add("0");
             txt_FSK.Items.Add("16");
             txt_FSK.Items.Add("18");
+            ckb_Alcoholic.Checked = true;
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -46,14 +47,17 @@ namespace Bar_Verwaltung
                 fsk = "0";
             }
 
-            //try
-            //{
+            try
+            {
                 SqlCom.NewItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, percent, fsk);
-            //}
-            //catch
-            //{
-
-            //}
+                dgv_Data.DataSource = SqlCom.DataGrid("TStock");//Updates the Dataggridview
+                dgv_Data.Update();
+                dgv_Data.Refresh();
+            }
+            catch
+            {
+                MessageBox.Show("Wrong or insufficient input!");
+            }
             
         }
 
@@ -83,20 +87,56 @@ namespace Bar_Verwaltung
                 fsk = "0";
             }
 
-            //try
-            //{
+            try
+            {
                 SqlCom.EditItem(drink, txt_Name.Text, Convert.ToInt32(txt_Quantaty.Text), Convert.ToDouble(txt_Price.Value), txt_Ingridiens.Text, percent, fsk, Convert.ToInt32(txt_ID.Text));
-            //}
-            //catch
-            //{
-
-            //}
+                dgv_Data.DataSource = SqlCom.DataGrid("TStock"); //Updates the Dataggridview
+                dgv_Data.Update();
+                dgv_Data.Refresh();
+            }
+            catch
+            {
+                MessageBox.Show("Wrong or insufficient input!");
+            }
             
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            SqlCom.DelItem(Convert.ToInt32(txt_ID.Text));
+            try
+            {
+                SqlCom.DelItem(Convert.ToInt32(txt_ID.Text));
+                dgv_Data.DataSource = SqlCom.DataGrid("TStock");//Updates the Dataggridview
+                dgv_Data.Update();
+                dgv_Data.Refresh();
+            }
+            catch
+            {
+                MessageBox.Show("No ID was entered or the ID is invalid!");
+            }
+            
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            SqlCom.DataUpdate();
+            dgv_Data.DataSource = SqlCom.DataGrid("TStock");
+            dgv_Data.Update();
+            dgv_Data.Refresh();
+        }
+
+        private void ckb_Alcoholic_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_Alcoholic.Checked)
+            {
+                txt_Percantage.Enabled = true;
+                txt_FSK.Enabled = true;
+            }
+            else
+            {
+                txt_Percantage.Enabled = false;
+                txt_FSK.Enabled = false;
+            }
         }
     }
 }

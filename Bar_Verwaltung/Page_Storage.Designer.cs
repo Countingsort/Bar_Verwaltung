@@ -42,6 +42,8 @@
             this.btn_Add = new System.Windows.Forms.Button();
             this.lbl_Storage = new System.Windows.Forms.Label();
             this.dgv_Data = new System.Windows.Forms.DataGridView();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.lbl_Price = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +59,7 @@
             // txt_FSK
             // 
             this.txt_FSK.FormattingEnabled = true;
-            this.txt_FSK.Location = new System.Drawing.Point(212, 277);
+            this.txt_FSK.Location = new System.Drawing.Point(212, 273);
             this.txt_FSK.Name = "txt_FSK";
             this.txt_FSK.Size = new System.Drawing.Size(75, 23);
             this.txt_FSK.TabIndex = 29;
@@ -82,6 +84,7 @@
             this.ckb_Alcoholic.TabIndex = 27;
             this.ckb_Alcoholic.Text = "Alcoholic?";
             this.ckb_Alcoholic.UseVisualStyleBackColor = true;
+            this.ckb_Alcoholic.CheckedChanged += new System.EventHandler(this.ckb_Alcoholic_CheckedChanged);
             // 
             // txt_Percantage
             // 
@@ -172,10 +175,31 @@
             this.dgv_Data.Size = new System.Drawing.Size(455, 308);
             this.dgv_Data.TabIndex = 31;
             // 
+            // btn_Update
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(326, 332);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(142, 23);
+            this.btn_Update.TabIndex = 32;
+            this.btn_Update.Text = " Update / Save changes";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            // 
+            // lbl_Price
+            // 
+            this.lbl_Price.AutoSize = true;
+            this.lbl_Price.Location = new System.Drawing.Point(212, 194);
+            this.lbl_Price.Name = "lbl_Price";
+            this.lbl_Price.Size = new System.Drawing.Size(36, 15);
+            this.lbl_Price.TabIndex = 33;
+            this.lbl_Price.Text = "Price:";
+            // 
             // Page_Storage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_Price);
+            this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.dgv_Data);
             this.Controls.Add(this.txt_Price);
             this.Controls.Add(this.txt_FSK);
@@ -215,5 +239,7 @@
         private Button btn_Add;
         private Label lbl_Storage;
         private DataGridView dgv_Data;
+        private Button btn_Update;
+        private Label lbl_Price;
     }
 }
