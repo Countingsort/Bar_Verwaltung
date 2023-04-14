@@ -125,7 +125,7 @@ namespace Bar_Verwaltung
         }
         public static void DelItem(int id)
         {
-            cmd.CommandText = string.Format("Delete from TSock where ID={0};",id);
+            cmd.CommandText = string.Format("Delete from TStock where ID={0};",id);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
@@ -139,6 +139,12 @@ namespace Bar_Verwaltung
             adapter.Fill(dt);
             return dt;
         }
+        public static void DataUpdate()
+        {
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+            builder.GetInsertCommand();
+            adapter.Update(dt);
+        }
         public static void EditItem(int drink, string name, int quantaty, double price, string ingrediens, double percentage, string fsk, int ID)
         {
             string pri = price.ToString(new CultureInfo("en-US"));
@@ -148,5 +154,6 @@ namespace Bar_Verwaltung
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
     }
 }
