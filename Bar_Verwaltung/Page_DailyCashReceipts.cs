@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Bar_Verwaltung
 {
-    public partial class Page_Settings : UserControl
+    public partial class Page_DailyCashReceipts : UserControl
     {
-        public Page_Settings()
+        public Page_DailyCashReceipts()
         {
             InitializeComponent();
         }
