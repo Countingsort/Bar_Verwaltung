@@ -93,19 +93,30 @@ namespace Bar_Verwaltung
         private void btn_main_Click(object sender, EventArgs e)
         {
             String[] IDs = txtB1.Text.Split(";");
+
             List<int> ID = new List<int> { };
             foreach(String i in IDs)
             {
-                ID.Add(Convert.ToInt32(i));
+                if(i != "")
+                {
+                    ID.Add(Convert.ToInt32(i));
+                }
             }
 
             int[] sortedID = Finance.getSortedArray(ID);
 
-            foreach(int i in sortedID)
+            for(int i = 0; i < sortedID.Length; i++)
             {
                 if (sortedID[i] != 0)
                 {
-                    Finance finance = new Finance(i, sortedID[i], Convert.ToDateTime(lb_date.Text));
+                    try
+                    {
+                        SqlCom.newFinance(sortedID[i], i, Convert.ToDateTime(lb_date.Text));
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show(x.ToString());
+                    }
                 }
             }
         }
