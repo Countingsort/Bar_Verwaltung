@@ -20,13 +20,17 @@ namespace Bar_Verwaltung
             txt_FSK.Items.Add("16");
             txt_FSK.Items.Add("18");
             ckb_Alcoholic.Checked = true;
+            txt_Percantage.Enabled = false;
+            txt_FSK.Enabled = false;
+            ckb_Alcoholic.Enabled = false;
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
             int drink;
-            double percent;
-            string fsk;
+            double percent = 0;
+            string fsk = "0";
+            byte error = 0;
             if (ckb_Drink.Checked)
             {
                 drink = 1;
@@ -38,8 +42,16 @@ namespace Bar_Verwaltung
 
             if (ckb_Alcoholic.Checked)
             {
-                percent = Convert.ToDouble(txt_Percantage.Text);
-                fsk = txt_FSK.Text;
+                try
+                {
+                    percent = Convert.ToDouble(txt_Percantage.Text);
+                    fsk = txt_FSK.Text;
+                }
+                catch (Exception ex)
+                {
+                    error = 1;
+                }
+
             }
             else
             {
@@ -54,18 +66,24 @@ namespace Bar_Verwaltung
                 dgv_Data.Update();
                 dgv_Data.Refresh();
             }
-            catch
+            catch (Exception ex)
+            {
+                error = 1;
+            }
+
+            if (error.Equals(1))
             {
                 MessageBox.Show("Wrong or insufficient input!");
+                error = 0;
             }
-            
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             int drink;
-            double percent;
-            string fsk;
+            double percent = 0;
+            string fsk = "0";
+            byte error = 1;
 
             if (ckb_Drink.Checked)
             {
@@ -78,8 +96,15 @@ namespace Bar_Verwaltung
 
             if (ckb_Alcoholic.Checked)
             {
-                percent = Convert.ToDouble(txt_Percantage.Text);
-                fsk = txt_FSK.Text;
+                try
+                {
+                    percent = Convert.ToDouble(txt_Percantage.Text);
+                    fsk = txt_FSK.Text;
+                }
+                catch (Exception ex)
+                {
+                    error = 1;
+                }
             }
             else
             {
@@ -96,9 +121,14 @@ namespace Bar_Verwaltung
             }
             catch
             {
-                MessageBox.Show("Wrong or insufficient input!");
+                error = 1;
             }
-            
+
+            if (error.Equals(1))
+            {
+                MessageBox.Show("Wrong or insufficient input!");
+                error = 0;
+            }
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
@@ -114,7 +144,7 @@ namespace Bar_Verwaltung
             {
                 MessageBox.Show("No ID was entered or the ID is invalid!");
             }
-            
+
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
@@ -136,6 +166,30 @@ namespace Bar_Verwaltung
             {
                 txt_Percantage.Enabled = false;
                 txt_FSK.Enabled = false;
+            }
+        }
+
+        private void ckb_Drink_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_Drink.Checked)
+            {
+                ckb_Alcoholic.Enabled = true;
+                if (ckb_Alcoholic.Checked)
+                {
+                    txt_Percantage.Enabled = true;
+                    txt_FSK.Enabled = true;
+                }
+                else
+                {
+                    txt_Percantage.Enabled = false;
+                    txt_FSK.Enabled = false;
+                }
+            }
+            else
+            {
+                txt_Percantage.Enabled = false;
+                txt_FSK.Enabled = false;
+                ckb_Alcoholic.Enabled = false;
             }
         }
     }
