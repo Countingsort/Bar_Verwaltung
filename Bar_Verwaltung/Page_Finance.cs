@@ -15,7 +15,7 @@ namespace Bar_Verwaltung
         public Page_Finance()
         {
             InitializeComponent();
-            lb_date.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            lb_date.Text = DateTime.Now.ToString("yyyy-MM-dd");
             AddButtons();
         }
         public void AddButtons()
@@ -57,7 +57,7 @@ namespace Bar_Verwaltung
             List<Stock> list = Stock.getItems();
             try
             {
-                double itemprice = list[ID-1].price;
+                double itemprice = list[ID - 1].price;
                 if (txtBPrice.Text != "")
                 {
                     double currentPrice = Convert.ToDouble(txtBPrice.Text);
@@ -81,11 +81,11 @@ namespace Bar_Verwaltung
             String[] IDs = txtB1.Text.Split(";");
             txtB1.Text = "";
             double nextprice = 0.0;
-            for(int i = 0; i < IDs.Length-2; i++)
+            for (int i = 0; i < IDs.Length - 2; i++)
             {
                 txtB1.Text += IDs[i];
                 txtB1.Text += ";";
-                nextprice += list[Convert.ToInt32(IDs[i])-1].price;
+                nextprice += list[Convert.ToInt32(IDs[i]) - 1].price;
             }
             txtBPrice.Text = nextprice.ToString();
         }
@@ -93,19 +93,30 @@ namespace Bar_Verwaltung
         private void btn_main_Click(object sender, EventArgs e)
         {
             String[] IDs = txtB1.Text.Split(";");
+
             List<int> ID = new List<int> { };
-            foreach(String i in IDs)
+            foreach (String i in IDs)
             {
-                ID.Add(Convert.ToInt32(i));
+                if (i != "")
+                {
+                    ID.Add(Convert.ToInt32(i));
+                }
             }
 
             int[] sortedID = Finance.getSortedArray(ID);
 
-            foreach(int i in sortedID)
+            for (int i = 0; i < sortedID.Length; i++)
             {
                 if (sortedID[i] != 0)
                 {
-                    Finance finance = new Finance(i, sortedID[i], Convert.ToDateTime(lb_date.Text));
+                    try
+                    {
+                        SqlCom.newFinance(sortedID[i], i, Convert.ToDateTime(lb_date.Text));
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show(x.ToString());
+                    }
                 }
             }
         }
