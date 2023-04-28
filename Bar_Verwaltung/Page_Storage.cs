@@ -19,7 +19,7 @@ namespace Bar_Verwaltung
             txt_FSK.Items.Add("0");
             txt_FSK.Items.Add("16");
             txt_FSK.Items.Add("18");
-            ckb_Alcoholic.Checked = true;
+            ckb_Alcoholic.Checked = false;
             txt_Percantage.Enabled = false;
             txt_FSK.Enabled = false;
             ckb_Alcoholic.Enabled = false;
@@ -40,7 +40,7 @@ namespace Bar_Verwaltung
                 drink = 0;
             }
 
-            if (ckb_Alcoholic.Checked)
+            if (ckb_Alcoholic.Checked && ckb_Drink.Checked)
             {
                 try
                 {
@@ -83,7 +83,7 @@ namespace Bar_Verwaltung
             int drink;
             double percent = 0;
             string fsk = "0";
-            byte error = 1;
+            byte error = 0;
 
             if (ckb_Drink.Checked)
             {
@@ -94,7 +94,7 @@ namespace Bar_Verwaltung
                 drink = 0;
             }
 
-            if (ckb_Alcoholic.Checked)
+            if (ckb_Alcoholic.Checked && ckb_Drink.Checked)
             {
                 try
                 {
@@ -171,6 +171,11 @@ namespace Bar_Verwaltung
 
         private void ckb_Drink_CheckedChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void ckb_Drink_CheckedChanged_1(object sender, EventArgs e)
+        {
             if (ckb_Drink.Checked)
             {
                 ckb_Alcoholic.Enabled = true;
@@ -189,6 +194,7 @@ namespace Bar_Verwaltung
             {
                 txt_Percantage.Enabled = false;
                 txt_FSK.Enabled = false;
+                ckb_Alcoholic.Checked = false;
                 ckb_Alcoholic.Enabled = false;
             }
         }
