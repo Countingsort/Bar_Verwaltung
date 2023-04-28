@@ -67,6 +67,7 @@ namespace Bar_Verwaltung
             int[] sortedArray = new int[max];
 
             for (int i = 0; i < sortedArray.Length; i++)
+
             {
                 sortedArray[i] += 1;
             }
