@@ -169,7 +169,7 @@ namespace Bar_Verwaltung
             }
         }
 
-        private void ckb_Drink_CheckedChanged(object sender, EventArgs e) // need to remove
+        private void ckb_Drink_CheckedChanged(object sender, EventArgs e) // need to Remove
         {
 
         }
