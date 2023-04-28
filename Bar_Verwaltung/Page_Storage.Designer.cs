@@ -74,6 +74,7 @@
             this.ckb_Drink.TabIndex = 28;
             this.ckb_Drink.Text = "Drink? (Yes/No)";
             this.ckb_Drink.UseVisualStyleBackColor = true;
+            this.ckb_Drink.CheckedChanged += new System.EventHandler(this.ckb_Drink_CheckedChanged_1);
             // 
             // ckb_Alcoholic
             // 
