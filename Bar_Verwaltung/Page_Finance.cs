@@ -15,7 +15,7 @@ namespace Bar_Verwaltung
         public Page_Finance()
         {
             InitializeComponent();
-            lb_date.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            lb_date.Text = DateTime.Now.ToString("dd-MM-yyyy");
             AddButtons();
         }
         public void AddButtons()
@@ -57,7 +57,7 @@ namespace Bar_Verwaltung
             List<Stock> list = Stock.getItems();
             try
             {
-                double itemprice = list[ID - 1].price;
+                double itemprice = list[ID-1].price;
                 if (txtBPrice.Text != "")
                 {
                     double currentPrice = Convert.ToDouble(txtBPrice.Text);
@@ -81,11 +81,11 @@ namespace Bar_Verwaltung
             String[] IDs = txtB1.Text.Split(";");
             txtB1.Text = "";
             double nextprice = 0.0;
-            for (int i = 0; i < IDs.Length - 2; i++)
+            for(int i = 0; i < IDs.Length-2; i++)
             {
                 txtB1.Text += IDs[i];
                 txtB1.Text += ";";
-                nextprice += list[Convert.ToInt32(IDs[i]) - 1].price;
+                nextprice += list[Convert.ToInt32(IDs[i])-1].price;
             }
             txtBPrice.Text = nextprice.ToString();
         }
@@ -95,9 +95,9 @@ namespace Bar_Verwaltung
             String[] IDs = txtB1.Text.Split(";");
 
             List<int> ID = new List<int> { };
-            foreach (String i in IDs)
+            foreach(String i in IDs)
             {
-                if (i != "")
+                if(i != "")
                 {
                     ID.Add(Convert.ToInt32(i));
                 }
@@ -105,7 +105,7 @@ namespace Bar_Verwaltung
 
             int[] sortedID = Finance.getSortedArray(ID);
 
-            for (int i = 0; i < sortedID.Length; i++)
+            for(int i = 0; i < sortedID.Length; i++)
             {
                 if (sortedID[i] != 0)
                 {
