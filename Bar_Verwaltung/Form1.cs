@@ -25,7 +25,7 @@ namespace Bar_Verwaltung
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            page_DailyCashReceipts1.BringToFront();
+            page_Storage2.BringToFront();
         }
     }
 }
