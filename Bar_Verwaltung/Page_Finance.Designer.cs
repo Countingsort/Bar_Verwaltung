@@ -60,15 +60,13 @@
             // 
             this.txtB1.Location = new System.Drawing.Point(14, 340);
             this.txtB1.Name = "txtB1";
-            this.txtB1.ReadOnly = true;
             this.txtB1.Size = new System.Drawing.Size(635, 23);
             this.txtB1.TabIndex = 3;
             // 
             // txtBPrice
             // 
-            this.txtBPrice.Location = new System.Drawing.Point(666, 153);
+            this.txtBPrice.Location = new System.Drawing.Point(666, 149);
             this.txtBPrice.Name = "txtBPrice";
-            this.txtBPrice.ReadOnly = true;
             this.txtBPrice.Size = new System.Drawing.Size(113, 23);
             this.txtBPrice.TabIndex = 4;
             // 
