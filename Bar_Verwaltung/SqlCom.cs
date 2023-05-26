@@ -39,6 +39,11 @@ namespace Bar_Verwaltung
                 cmd.Connection = con;
                 CreateTable();
                 SqlCom.NewItem(1, "Wasser", 500, 3.5, "Wasser",0,"0");
+                SqlCom.NewItem(1, "Apfelsaft", 200, 4.5, "Apfel, zucker", 0, "0");
+                SqlCom.NewItem(1, "Cola", 40, 4.5, "Cola", 0, "0");
+                SqlCom.NewItem(1, "Bier 0,33", 50, 3.4, "Hefe, Hopfen, Wasser", 5, "16");
+                SqlCom.NewItem(0, "Schnitzel", 80, 18, "Schwein, Kartoffel, Zitrone, Ei, Mehl", 0, "0");
+                SqlCom.NewItem(0, "Pommes", 120, 5, "Kartoffel, Salz, Öl", 0, "0");
                 return false;
             }
 
