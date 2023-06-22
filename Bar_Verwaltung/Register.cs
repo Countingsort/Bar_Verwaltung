@@ -19,16 +19,16 @@ namespace Bar_Verwaltung
 
         private void  button1_Click(object sender, EventArgs e) //markus why button1 as name
         {
-            if (string.IsNullOrEmpty(button1.Text))
+            if (string.IsNullOrEmpty(txtB_1.Text) || string.IsNullOrEmpty(txtB_2.Text) || string.IsNullOrEmpty(txtB_3.Text))
             {
-                MessageBox.Show("The Username is empty");
+                MessageBox.Show("A Field is empty");
                 txtB_1.Clear();
                 txtB_2.Clear();
                 txtB_3.Clear();
             }
             else if (!txtB_2.Text.Equals(txtB_3.Text))
             {
-                MessageBox.Show("The Password don't match up!");
+                MessageBox.Show("The Password does not match up!");
             }
             //else if (txtB_2.Text is not null && txtB_2.Text.Equals(txtB_3.Text) || txtB_3.Text is not null && txtB_2.Text.Equals(txtB_3.Text)) 
             //{
