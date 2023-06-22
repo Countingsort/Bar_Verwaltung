@@ -109,9 +109,12 @@ namespace Bar_Verwaltung
             {
                 if (sortedID[i] != 0)
                 {
-                    try
-                    {
-                        SqlCom.newFinance(sortedID[i], i, Convert.ToDateTime(lb_date.Text));
+                    try 
+                    { 
+                        SqlCom.newFinance(sortedID[i], i, lb_date.Text);
+                        MessageBox.Show("Erfolgreich");
+                        txtB1.Text = "";
+                        txtBPrice.Text = "";
                     }
                     catch (Exception x)
                     {

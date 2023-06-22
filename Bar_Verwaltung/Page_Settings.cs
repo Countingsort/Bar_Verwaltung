@@ -15,6 +15,15 @@ namespace Bar_Verwaltung
         public Page_Settings()
         {
             InitializeComponent();
+            dgv_Data.DataSource = SqlCom.DataGrid("TFinance");
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            SqlCom.DataUpdate();
+            dgv_Data.DataSource = SqlCom.DataGrid("TFinance");
+            dgv_Data.Update();
+            dgv_Data.Refresh();
         }
     }
 }

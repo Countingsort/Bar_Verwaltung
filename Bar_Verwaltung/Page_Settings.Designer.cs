@@ -28,31 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Darkmode = new System.Windows.Forms.Button();
+            this.dgv_Data = new System.Windows.Forms.DataGridView();
+            this.btn_Update = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_Darkmode
+            // dgv_Data
             // 
-            this.btn_Darkmode.Location = new System.Drawing.Point(63, 59);
-            this.btn_Darkmode.Name = "btn_Darkmode";
-            this.btn_Darkmode.Size = new System.Drawing.Size(75, 23);
-            this.btn_Darkmode.TabIndex = 0;
-            this.btn_Darkmode.Text = "Darkmode";
-            this.btn_Darkmode.UseVisualStyleBackColor = true;
+            this.dgv_Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Data.Location = new System.Drawing.Point(18, 17);
+            this.dgv_Data.Name = "dgv_Data";
+            this.dgv_Data.RowTemplate.Height = 25;
+            this.dgv_Data.Size = new System.Drawing.Size(745, 323);
+            this.dgv_Data.TabIndex = 32;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(18, 346);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(142, 23);
+            this.btn_Update.TabIndex = 33;
+            this.btn_Update.Text = " Update / Save changes";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // Page_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btn_Darkmode);
+            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.dgv_Data);
             this.Name = "Page_Settings";
             this.Size = new System.Drawing.Size(800, 375);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Button btn_Darkmode;
+        private DataGridView dgv_Data;
+        private Button btn_Update;
     }
 }

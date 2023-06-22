@@ -69,7 +69,7 @@ namespace Bar_Verwaltung
             try
             {
                 con.Open(); //coment
-                cmd.CommandText = "Create Table TFinance(ID int identity(1,1),HMS int,PID int,Date Date);";
+                cmd.CommandText = "Create Table TFinance(ID int identity(1,1),HMS int,PID int,Date nvarchar(128));";
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "Create Table TLogin(UserID int IDENTITY (1,1) PRIMARY KEY,Username nvarchar(50),Password nvarchar(128));";
                 cmd.ExecuteNonQuery();
@@ -160,9 +160,9 @@ namespace Bar_Verwaltung
             con.Close();
         }
 
-        public static void newFinance(int HMS, int PID, DateTime dateTime)
+        public static void newFinance(int HMS, int PID, string dateTime)
         {
-            cmd.CommandText = String.Format("Insert into TFinance Values({0}, {1}, {2});", HMS, PID, dateTime);
+            cmd.CommandText = String.Format("Insert into TFinance Values({0}, {1}, '{2}');", HMS, PID, dateTime);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
