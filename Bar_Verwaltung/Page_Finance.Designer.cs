@@ -52,9 +52,10 @@
             this.lb_titel.AutoSize = true;
             this.lb_titel.Location = new System.Drawing.Point(666, 73);
             this.lb_titel.Name = "lb_titel";
-            this.lb_titel.Size = new System.Drawing.Size(72, 15);
+            this.lb_titel.Size = new System.Drawing.Size(73, 15);
             this.lb_titel.TabIndex = 2;
-            this.lb_titel.Text = "Tageslösung";
+            this.lb_titel.Text = "Daily returns";
+            this.lb_titel.Click += new System.EventHandler(this.lb_titel_Click);
             // 
             // txtB1
             // 
@@ -94,7 +95,7 @@
             this.btn_main.Name = "btn_main";
             this.btn_main.Size = new System.Drawing.Size(75, 70);
             this.btn_main.TabIndex = 7;
-            this.btn_main.Text = "Fertig";
+            this.btn_main.Text = "Complete ";
             this.btn_main.UseVisualStyleBackColor = true;
             this.btn_main.Click += new System.EventHandler(this.btn_main_Click);
             // 
@@ -103,9 +104,9 @@
             this.lb_Price.AutoSize = true;
             this.lb_Price.Location = new System.Drawing.Point(669, 121);
             this.lb_Price.Name = "lb_Price";
-            this.lb_Price.Size = new System.Drawing.Size(35, 15);
+            this.lb_Price.Size = new System.Drawing.Size(36, 15);
             this.lb_Price.TabIndex = 8;
-            this.lb_Price.Text = "Preis:";
+            this.lb_Price.Text = "Price:";
             // 
             // btn_back
             // 
@@ -113,7 +114,7 @@
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(102, 41);
             this.btn_back.TabIndex = 9;
-            this.btn_back.Text = "Zurück";
+            this.btn_back.Text = "Go Back";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 

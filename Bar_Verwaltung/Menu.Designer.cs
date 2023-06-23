@@ -1,6 +1,6 @@
 ﻿namespace Bar_Verwaltung
 {
-    partial class Form1
+    partial class Menu
     {
         /// <summary>
         ///  Required designer variable.
@@ -62,9 +62,9 @@
             // 
             this.btn_Settings.Location = new System.Drawing.Point(174, 2);
             this.btn_Settings.Name = "btn_Settings";
-            this.btn_Settings.Size = new System.Drawing.Size(75, 60);
+            this.btn_Settings.Size = new System.Drawing.Size(80, 60);
             this.btn_Settings.TabIndex = 2;
-            this.btn_Settings.Text = "Settings";
+            this.btn_Settings.Text = "Accounting documents";
             this.btn_Settings.UseVisualStyleBackColor = true;
             this.btn_Settings.Click += new System.EventHandler(this.btn_Settings_Click);
             // 
@@ -108,8 +108,8 @@
             this.Controls.Add(this.btn_Settings);
             this.Controls.Add(this.btn_Finance);
             this.Controls.Add(this.btn_Storage);
-            this.Name = "Form1";
-            this.Text = "Bar Manageing";
+            this.Name = "Menu";
+            this.Text = "Bar Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -175,7 +175,7 @@ namespace Bar_Verwaltung
             DataTable dt = new DataTable();
             dt = SqlCom.DataGrid("TStock");
 
-            List<Stock> list = new List<Stock> { };
+            List<Stock> list = new List<Stock>();
             foreach (DataRow row in dt.Rows)
             {
                 int Id = Convert.ToInt32(row["ID"]);

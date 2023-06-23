@@ -44,6 +44,7 @@ namespace Bar_Verwaltung
                 SqlCom.NewItem(1, "Bier 0,33", 50, 3.4, "Hefe, Hopfen, Wasser", 5, "16");
                 SqlCom.NewItem(0, "Schnitzel", 80, 18, "Schwein, Kartoffel, Zitrone, Ei, Mehl", 0, "0");
                 SqlCom.NewItem(0, "Pommes", 120, 5, "Kartoffel, Salz, Öl", 0, "0");
+
                 return false;
             }
 

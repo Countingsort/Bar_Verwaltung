@@ -39,6 +39,7 @@ namespace Bar_Verwaltung
                 }
                 else
                 {
+                    TabLayPan.Controls.Add(b, counter2, counter3);
                     counter2 = 0;
                     counter3++;
                 }
@@ -122,6 +123,11 @@ namespace Bar_Verwaltung
                     }
                 }
             }
+        }
+
+        private void lb_titel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,6 +48,7 @@
             // 
             this.txtB_2.Location = new System.Drawing.Point(12, 151);
             this.txtB_2.Name = "txtB_2";
+            this.txtB_2.PasswordChar = '*';
             this.txtB_2.Size = new System.Drawing.Size(238, 23);
             this.txtB_2.TabIndex = 1;
             // 

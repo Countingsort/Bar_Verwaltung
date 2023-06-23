@@ -1,8 +1,8 @@
 namespace Bar_Verwaltung
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
             SqlCom.CheckDatabaseExists("Bar3IT22");
